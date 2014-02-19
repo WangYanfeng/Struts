@@ -1,15 +1,15 @@
 <%@ page language="java" import="java.util.*" pageEncoding="GB18030"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <base href="<%=basePath%>">
+    <title>My JSP 'loginSucces.jsp' starting page</title>
     
-    <title>My JSP 'index.jsp' starting page</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -18,14 +18,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+
   </head>
   
   <body>
-    <form action="home/login" method="post">
-    	<label>姓名：</label>
-    	<input type="text" name="user.name" size="18"/>
-    	<br/>
-    	<input type="submit" value="Submit"/>
-    </form>
+   	登陆成功！<br>
+   	您好！<s:property value="#session.name"/>
+   	<s:debug></s:debug>
   </body>
 </html>

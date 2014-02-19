@@ -9,13 +9,24 @@
  	<constant name="struts.i28n.encoding" value="GBK"/>
  	
  	<package name="default" namespace="/home" extends="struts-default">
-
+		<default-action-ref name="index" />
+		<action name="index">
+			<result>/index.jsp</result>
+		</action>
         <action name="user_*" class="com.strutstest.user.action.UserAction" method="{1}">
+            <result name="error">
+            	/errorOperate.jsp
+            </result>
+            <result name="success">
+            	/success.html
+            </result>
+        </action>
+        <action name="login" class="com.strutstest.user.action.LoginAction">
             <result name="error">
             	/error.html
             </result>
             <result name="success">
-            	/success.html
+            	/login_success.jsp
             </result>
         </action>
     </package>

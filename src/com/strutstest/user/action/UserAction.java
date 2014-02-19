@@ -13,6 +13,10 @@ public class UserAction extends ActionSupport{
 	}
 	public String add(){
 		System.out.println("user.name="+user.getName());
+		if(!user.getName().equals("admin")||user.getName()==null){
+			this.addFieldError("error", "not administrator!");
+			return "error";
+		}
 		return "success";
 	}
 	public String remove(){
