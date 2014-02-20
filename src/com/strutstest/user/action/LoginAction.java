@@ -13,6 +13,8 @@ public class LoginAction extends ActionSupport implements RequestAware,SessionAw
 	private Map<String, String> request;
 	private Map session;
 	private Map application;
+	private String userName;
+	
 	private User user;
 	
 	public LoginAction(){
@@ -21,23 +23,41 @@ public class LoginAction extends ActionSupport implements RequestAware,SessionAw
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		session.put("name", user.getName());
-		System.out.println("user.name="+user.getName());
-		return "success";
+		userName=user.getName();
+		if(!user.getPassword().equals("123")){
+			System.out.println(userName+"pwd error");
+			return "error";
+		}else{
+			session.put("name", user.getName());
+			System.out.println("user.name="+user.getName());
+			return "success";
+		}		
+	}
+	public Map getRequest() {
+		return request;
+	}
+	public Map getSession() {
+		return session;
 	}
 	public User getUser() {
 		return user;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public String getUserName() {
+		return userName;
+	}
+	public void setRequest(Map request) {
+		// TODO Auto-generated method stub
+		this.request=request;
 	}
 	public void setSession(Map session) {
 		// TODO Auto-generated method stub
 		this.session=session;
 	}
-	public void setRequest(Map request) {
-		// TODO Auto-generated method stub
-		this.request=request;
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	
 }

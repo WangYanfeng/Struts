@@ -22,8 +22,8 @@
             </result>
         </action>
         <action name="login" class="com.strutstest.user.action.LoginAction">
-            <result name="error">
-            	/error.html
+            <result type="redirect" name="error">
+            	/error.jsp
             </result>
             <result name="success">
             	/login_success.jsp
