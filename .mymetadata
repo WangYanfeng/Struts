@@ -2,7 +2,7 @@
 <project-module
   type="WEB"
   name="Struts"
-  id="myeclipse.1392708016950"
+  id="myeclipse.1252985870593"
   context-root="/Struts"
   j2ee-spec="5.0"
   archive="Struts.war">
